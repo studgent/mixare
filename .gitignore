@@ -1,6 +1,9 @@
-/bin
-/gen
-/.sonar
-/.settings
+bin/
+gen/
+.sonar/
+.settings/
+.idea/
 .gradle/
+*.iml
+build/
 sonar-project.properties
