@@ -1,0 +1,53 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath 'com.android.tools.build:gradle:0.6.3'
+  }
+}
+
+apply plugin: 'android'
+
+repositories {
+  mavenCentral()
+}
+
+android {
+  compileSdkVersion 14
+  buildToolsVersion "18.0.1"
+
+  dependencies {
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    compile 'com.android.support:support-v4:18.0.+'
+    compile 'ch.acra:acra:4.2.3'
+    compile 'com.google.android.gms:play-services:3.1.36'
+    compile project(':plugins:mixare-library')
+    compile fileTree(dir: 'libs', include: '*.jar')
+  }
+
+  signingConfigs {
+    release {
+      storeFile file("../mixare.keystore")
+      storePassword "Tessa1Dell"
+      keyAlias "mykey"
+      keyPassword "Tessa1Dell"
+    }
+    debug {
+      storeFile file("/home/jacques/.android/debug.keystore")
+    }
+  }
+
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+    }
+
+    debug {
+      signingConfig signingConfigs.debug
+    }
+
+  }
+
+}

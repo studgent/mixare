@@ -1,0 +1,7 @@
+include ':mixare'
+include ':plugins:mixare-library'
+include ':plugins:mixare-arena-processor-plugin'
+include ':plugins:mixare-arena-splashscreen-plugin'
+include ':plugins:mixare-barcode-plugin'
+include ':plugins:mixare-imagemarker-plugin'
+include ':plugins:mixare-twitter-processor-plugin'
